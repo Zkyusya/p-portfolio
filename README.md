@@ -23,6 +23,7 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 
  Step 2: Build docker image using the below command -- in your gitbash terminal
+ 
  docker build -t website:latest . 
 
  This command tells Docker to build an image from the Dockerfile in the current directory (denoted by .) and tag it as website with the latest tag. You should see something like this...
@@ -39,6 +40,7 @@ step 3: verify the docker image using the command (docker images). Your image sh
 
 
 step 4: Build and deploy the container with the image we created earlier using the command:
+
 $ docker run -d -p 8080:80 website:latest
 
 
@@ -47,11 +49,13 @@ $ docker run -d -p 8080:80 website:latest
 
 In my case, i received an error "port not available" because my port 8080 was being used by jenkins. Hence, i changed my port to 8050
 
+$ docker run -d -p 8050:80 website:latest
 
 ![image](https://github.com/user-attachments/assets/b4ff11f4-e5e9-4c27-a6e4-a9898bbbb3ee)
 
 
 This command runs the Docker container in detached mode (-d), maps port 8050 on your host to port 80 in the container (-p 8050:80), and uses the website image.
+
 Open your web browser and navigate to http://localhost:8050. You should see your simple website running.
 
 
@@ -61,6 +65,7 @@ Open your web browser and navigate to http://localhost:8050. You should see your
 step 5: Tag the docker image
 
 $ docker tag website:latest zkyusya/website:latest
+
 step 6: Login in to the dockerhub from the command line using command (docker login)
 
 
@@ -76,10 +81,14 @@ $ docker push zkyusya/website:latest
 
 
 Go to Docker Hub in your web browser.
+
 Navigate to your profile and find the website repository.
+
 Verify that the image is listed under the “Tags” section.
+
 Step 8: Pull and Run the Image from Docker Hub
 To verify that your image works when pulled from Docker Hub, you can run it on any machine with Docker installed:
+
 $ docker run -d -p 8050:80 zkyusya/website:latest
 
 LETS WRAP IT ALL WITH THIS SIMPLE DOCKER CLI CHEATSHEET....
