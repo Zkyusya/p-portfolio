@@ -91,6 +91,12 @@ To verify that your image works when pulled from Docker Hub, you can run it on a
 
 $ docker run -d -p 8050:80 zkyusya/website:latest
 
+![image](https://github.com/user-attachments/assets/82fbe294-7e92-46ca-afb5-3ae9e8d7ef78)
+
+![image](https://github.com/user-attachments/assets/39600312-247c-4ee8-9920-e237c09ab570)
+
+
+
 LETS WRAP IT ALL WITH THIS SIMPLE DOCKER CLI CHEATSHEET....
 
 
