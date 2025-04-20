@@ -10,6 +10,9 @@ Step 1: Create dockerfile in the root directory of the project
 
 
 add the following content to the dockerfile created;
+
+![image](https://github.com/user-attachments/assets/96c57953-fefd-466e-8ea4-b4e3741bb552)
+
 # Use an official nginx image as the base image
 FROM nginx:alpine
 # Copy the HTML files to the nginx html directory
@@ -18,7 +21,6 @@ COPY . /usr/share/nginx/html
 EXPOSE 80
 # Start nginx when the container starts
 CMD ["nginx", "-g", "daemon off;"]
-
 
  Step 2: Build docker image using the below command -- in your gitbash terminal
  docker build -t website:latest . 
